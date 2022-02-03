@@ -254,6 +254,7 @@ public class deathevent implements Listener {
                 playerdropsdata.get().set("ChestBlock", chestblock.getLocation());
                 if (expdropwhendeath){
                     e.setKeepLevel(true);
+                    e.setShouldDropExperience(false);
                 }
                 playerdropsdata.save();
                 //
