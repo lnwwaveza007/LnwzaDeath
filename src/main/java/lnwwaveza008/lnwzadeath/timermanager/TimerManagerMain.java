@@ -41,7 +41,7 @@ public class TimerManagerMain {
                                     if (!(chest.getInventory().isEmpty())) {
                                         List<ItemStack> drops = Arrays.asList(chest.getInventory().getContents());
                                         deathevent deathevnt = new deathevent();
-                                        playerdropsdata.get().set("DeathLoot", deathevnt.getFirsttradeprice());
+                                        playerdropsdata.get().set("TradePrice", deathevnt.getFirsttradeprice());
                                         playerdropsdata.get().set("DeathLoot", drops);
                                         playerdropsdata.save();
                                         //Set Block
