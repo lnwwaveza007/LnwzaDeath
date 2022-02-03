@@ -38,7 +38,7 @@ public class TimerManagerMain {
                                 if (playerdropsdata.get().getLocation("ChestBlock").getBlock().getType().equals(Material.CHEST)) {
                                     Location loc = playerdropsdata.get().getLocation("ChestBlock");
                                     Chest chest = (Chest) loc.getBlock().getState();
-                                    if (chest.getInventory().isEmpty()) {
+                                    if (!(chest.getInventory().isEmpty())) {
                                         List<ItemStack> drops = Arrays.asList(chest.getInventory().getContents());
                                         deathevent deathevnt = new deathevent();
                                         playerdropsdata.get().set("DeathLoot", deathevnt.getFirsttradeprice());
