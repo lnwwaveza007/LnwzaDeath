@@ -1,0 +1,10 @@
+name: LnwzaDeath
+version: '1.0'
+main: lnwwaveza008.lnwzadeath.LnwzaDeath
+api-version: 1.16
+authors: [ lnwwaveza008 ]
+description: Make your death interesting.
+commands:
+  LnwzaDeath:
+    description: "LnwzaDeath's commands"
+    usage: /<command>

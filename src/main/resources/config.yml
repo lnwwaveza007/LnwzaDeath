@@ -1,0 +1,88 @@
+
+#██╗░░░░░███╗░░██╗░██╗░░░░░░░██╗███████╗░█████╗░██████╗░███████╗░█████╗░████████╗██╗░░██╗
+#██║░░░░░████╗░██║░██║░░██╗░░██║╚════██║██╔══██╗██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██║░░██║
+#██║░░░░░██╔██╗██║░╚██╗████╗██╔╝░░███╔═╝███████║██║░░██║█████╗░░███████║░░░██║░░░███████║
+#██║░░░░░██║╚████║░░████╔═████║░██╔══╝░░██╔══██║██║░░██║██╔══╝░░██╔══██║░░░██║░░░██╔══██║
+#███████╗██║░╚███║░░╚██╔╝░╚██╔╝░███████╗██║░░██║██████╔╝███████╗██║░░██║░░░██║░░░██║░░██║
+#╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚═╝░░╚══════╝╚═╝░░╚═╝╚═════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝
+#Made by Lnwwaveza008
+
+#============= Settings =======================
+#If player died in these world plugin will not do anything.
+blacklist-world:
+  - test1
+  - test2
+
+#Make exp drop when player death?
+#If is true the exp will not drop when player died but Item will drop normally.
+exp-not-drop-when-death: true
+
+#Allow everyone to open/destory death chest.
+allow-open-deathchest: false
+
+#Make all items in death chest get in to gui when it break.(Clear all drops from death chest)
+#like if you break death chest the chest will not drop anything but every items will sent to gui instead.
+sent-when-destroy: true
+
+#If player died when the old deathchest is not timeout.Should send all items in the old chest to DeathGUI? and then remove the chest.
+#Or if this setting is true all of that items will be removed with chest.
+removeitem-when-death-again: false
+
+#Time that death chest will be destroy and sent all items to gui (in seconds)
+deathchest-timeout: 300
+
+#Deathpoints at first time when player join the game.
+stater-deathpoints: 10
+
+#Deathpoints that use to trade item back in the first time
+first-trade-price: 1
+
+#Up the price everytime player trade item back?
+#Like if first time trade back with 1 points next will need to trade with 2 points
+up-trade-price: true
+
+#Equation for calculate for price
+#Use x for old trade price
+#Remeber!! You should use only Interger in this because deathpoints is int value.
+#You can use any operator in this like ^2,*,/,-,+
+equation-price: "x + 1"
+#============= Message ===================
+Prefix: "&7[&bLnwzaDeath&7] "
+Reload: "&aReload Complete." #When use reload commands
+NoPerm: "&cYou don't have permission to do this." #When player doesn't have permission to do.
+#RemoveOldChest will sent when plugin remove old chest of player if player died but they deathchest still there plugin will remove it.
+RemoveOldChest1: "&cYour old chest is removed but all your items in old chest is sent to Gui." #When the chest had been removed but all item sent to GUI.
+RemoveOldChest2: "&cYour old chest and your items is now removed." #When the chest and all items had been removed.
+ChestTimeOut: "&cYour DeathChest is now timeout,All of your items had been sent to Gui" #When the deathchest is timeout
+WhenBreakChest: "&cYour DeathChest had been destroyed. Your items is now on Gui." #When someone or owner break deathchest.
+CancelInteract: "&cYou can't do this, Only owner of this chest can do that." #When the plugin block another player that try to break or interact death chest.
+TradeComplete: "&aTrade Complete." #When trade item from gui complete.
+DontHaveDeathCoins: "&cYou don't have enough deathcoins to do that." #When don't have enough deathcoins when trade.
+PlayerDontOnline: "&cThat player is not online." #When use "set" command and player not online.
+CantSetThat: "&cThe Value need to set more than or equal to 0" #When use "set" command but value is less than 0 or isn't set.
+SetComplete: "&aDeathcoins of {X} is now set!" #When use "set" command complete > {X} for Player's name
+WrongCommands: "&cWrong Commands, Use &e/lnwzadeath help &cto get some help" #When the commands is wrong
+HelpCommands:
+  - "&7[&bLnwzaDeath&7] &f:"
+  - "&eHelp &f: &a/LnwzaDeath Help"
+  - "&eOpen Death Gui &f: &a/LnwzaDeath Gui"
+  - "&eSet deathpoints &f: &a/LnwzaDeath Set <name> <amount>"
+
+#============= GUI =======================
+#You can use color with code & like normal Ex : "&aHello"
+#Disable black glass frame in LnwzaDeath's Gui
+disable-black-glass: false
+
+coinviewers:
+  name: "&bDeathCoins"
+  #You can get Texture from here : https://minecraft-heads.com/custom-heads
+  texturevalue: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWRiN2Q4OGExNjhmNDg4MzU0Mjc0MDlmZGViYzVjOGRjYjQwNmI2ZGIyOGU1YTc5OWE4M2MzYzljMGNmNjQ4In19fQ=="
+  lore: #Use {X} for amount of player's deathcoins
+    - "You have &e{X} Death Coins"
+    - "Tomato is better than carrot"
+
+#This will show when player use DeathGui
+itemlores:
+  lore: #Use {X} for price to trade this item back
+    - "Price : &e{X}"
+    - "Is pretty cheap right?"
